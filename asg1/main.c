@@ -176,6 +176,26 @@ int main()
     product = cal_product(mA, mB);
     print_matrix(product);
 
+    for (int i = 0; i < mA->row; i++) {
+        free(mA->array[i]);
+    }
+    free(mA);
+
+    for (int i = 0; i < mB->row; i++) {
+        free(mB->array[i]);
+    }
+    free(mB);
+
+    for (int i = 0; i < sum->row; i++) {
+        free(sum->array[i]);
+    }
+    free(sum);
+
+    for (int i = 0; i < product->row; i++) {
+        free(product->array[i]);
+    }
+    free(product);
+
     return 0;
 }
 
